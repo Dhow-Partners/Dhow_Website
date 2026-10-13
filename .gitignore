@@ -1,0 +1,19 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Logs and local env
+*.log
+.env
+.env.*
+node_modules/
+
+# Hosting tool folders
+.vercel/
+.netlify/
