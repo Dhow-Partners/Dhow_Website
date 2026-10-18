@@ -1,5 +1,9 @@
 {
   "cleanUrls": true,
+  "redirects": [
+    { "source": "/whatsapp", "destination": "https://wa.me/message/HJAYDBSILGGWM1", "permanent": false },
+    { "source": "/wa", "destination": "https://wa.me/message/HJAYDBSILGGWM1", "permanent": false }
+  ],
   "rewrites": [
     {
       "source": "/((?!assets/|support\\.js|robots\\.txt|sitemap\\.xml|llms\\.txt|manifest\\.webmanifest|404\\.html).*)",
