@@ -134,7 +134,6 @@ html{font-size:16px}
         <div style="margin-top:36px"><a href="https://calendly.com/hello-dhowpartners/30min" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:14px;background:#00395F;color:#FFFFFF;border-radius:999px;padding:14px 14px 14px 30px;font:500 15px var(--font-text);text-decoration:none;transition:transform 200ms" style-hover="transform:translateY(-2px)">Book a call<span style="width:38px;height:38px;border-radius:999px;background:var(--green);color:#FFFFFF;display:inline-flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square"><line x1="6" y1="18" x2="18" y2="6"></line><polyline points="8 6 18 6 18 16"></polyline></svg></span></a></div>
       </div>
     </div>
-    <a href="#after-hero" aria-label="Scroll down" style="position:absolute;left:50%;bottom:clamp(24px,4vh,40px);transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;color:#00395F;text-decoration:none;opacity:0.75" style-hover="opacity:1">{{ scrollCue }}</a>
   </section>
   </sc-if>
   <sc-if value="{{ heroPhoto }}" hint-placeholder-val="{{ false }}">
@@ -185,7 +184,7 @@ html{font-size:16px}
   <section id="testimonials" aria-label="Client testimonials" style="{{ wrap }}padding:clamp(72px,10vw,136px) 0 0">
     <div data-reveal style="{{ tPanel }}">
       <svg aria-hidden="true" viewBox="0 0 24 24" fill="rgba(0,57,95,0.06)" style="position:absolute;left:clamp(16px,5vw,72px);top:clamp(14px,3vw,36px);width:clamp(76px,9vw,132px);height:clamp(76px,9vw,132px)"><path d="M9.5 6C6.5 7.2 4.5 9.9 4.5 13.4V18h6v-6H7.6c.2-1.9 1.3-3.4 3.1-4.2L9.5 6Zm9 0c-3 1.2-5 3.9-5 7.4V18h6v-6h-2.9c.2-1.9 1.3-3.4 3.1-4.2L18.5 6Z"></path></svg>
-      <h2 style="{{ h2 }}margin:0 auto;position:relative">What our clients say.</h2>
+      <h2 style="{{ h2 }}margin:0 auto;position:relative;font-weight:700;letter-spacing:-0.03em">What our clients say.</h2>
       <div aria-hidden="true" style="position:relative;display:flex;justify-content:center;gap:6px;margin-top:22px"><span style="width:64px;height:3px;border-radius:3px;background:var(--green)"></span><span style="width:12px;height:3px;border-radius:3px;background:var(--green-soft)"></span></div>
     </div>
     <div id="tStage" role="region" aria-roledescription="carousel" aria-label="What our clients say" tabindex="0" style="{{ tStage }}">
@@ -837,11 +836,11 @@ class Component extends DCLogic {
     ];
     const tImg=(L,st)=>React.createElement('img',{src:L[0],alt:L[1],width:L[2],height:L[3],draggable:false,style:st});
     const tLogoEl=(L)=> L[4] ? React.createElement('span',{style:{width:'60px',height:'60px',borderRadius:'999px',background:'#F2F5F7',border:'1px solid var(--rule)',display:'inline-flex',alignItems:'center',justifyContent:'center'}},tImg(L,{width:L[2]+'px',height:L[3]+'px',display:'block',objectFit:'contain'})) : tImg(L,{height:L[3]+'px',width:'auto',display:'block'});
-    const ti=((s.tIdx||0)%3+3)%3; const tG=m?'14px':'28px';
-    const tBase='grid-area:1/1;justify-self:center;align-self:stretch;position:relative;margin:0;width:'+(m?'min(82vw,340px)':'clamp(300px,29vw,370px)')+';background:var(--card);border-radius:24px;padding:'+(m?'26px 22px 28px':'32px 30px 34px')+';display:flex;flex-direction:column;align-items:center;text-align:center;cursor:pointer;user-select:none;-webkit-user-select:none;transition:transform 800ms cubic-bezier(0.22,1,0.36,1),box-shadow 800ms;';
+    const ti=((s.tIdx||0)%3+3)%3; const tG=m?'8px':'28px'; const tS=m?'0.9':'0.88';
+    const tBase='grid-area:1/1;justify-self:center;align-self:stretch;position:relative;margin:0;width:'+(m?'min(80vw,340px)':'clamp(300px,29vw,24rem)')+';background:var(--card);border-radius:24px;padding:'+(m?'26px 22px 28px':'32px 30px 34px')+';display:flex;flex-direction:column;align-items:center;text-align:center;cursor:pointer;user-select:none;-webkit-user-select:none;transition:transform 800ms cubic-bezier(0.22,1,0.36,1),box-shadow 800ms;';
     const tPos=['transform:translateX(0) scale(1);z-index:3;--tO:1;box-shadow:0 2px 4px rgba(0,57,95,0.05),0 30px 60px -24px rgba(0,57,95,0.38);',
-      'transform:translateX(calc(100% + '+tG+')) scale(0.88);z-index:2;--tO:0.5;box-shadow:0 1px 2px rgba(0,57,95,0.05),0 14px 30px -18px rgba(0,57,95,0.22);',
-      'transform:translateX(calc(-100% - '+tG+')) scale(0.88);z-index:1;--tO:0.5;box-shadow:0 1px 2px rgba(0,57,95,0.05),0 14px 30px -18px rgba(0,57,95,0.22);'];
+      'transform:translateX(calc(100% + '+tG+')) scale('+tS+');z-index:2;--tO:0.72;box-shadow:0 1px 2px rgba(0,57,95,0.05),0 14px 30px -18px rgba(0,57,95,0.22);',
+      'transform:translateX(calc(-100% - '+tG+')) scale('+tS+');z-index:1;--tO:0.72;box-shadow:0 1px 2px rgba(0,57,95,0.05),0 14px 30px -18px rgba(0,57,95,0.22);'];
     const tCards=tData.map((d,i)=>{ const pos=((i-ti)%3+3)%3; return {name:d.name,org:d.org,q:d.q,logoEl:tLogoEl(d.logo),hidden:(pos===0?'false':'true'),on:this.tTo(i),style:tBase+tPos[pos]}; });
     const tDots=tData.map((d,i)=>({on:this.tTo(i),label:'Show testimonial from '+d.name,cur:(i===ti?'true':'false'),style:'height:8px;border:0;padding:0;border-radius:999px;cursor:pointer;transition:all 300ms;'+(i===ti?'width:28px;background:var(--green);':'width:8px;background:#C3D0D8;')}));
     const quoteVals={
@@ -850,10 +849,10 @@ class Component extends DCLogic {
       tStage:'position:relative;z-index:1;display:grid;width:100vw;margin-left:calc(50% - 50vw);overflow:hidden;margin-top:'+(m?'-118px':'calc(-1 * clamp(140px,13vw,180px))')+';padding:'+(m?'26px 0 58px':'36px 0 84px')+';outline:none;',
       tLogo:'height:60px;display:flex;align-items:center;justify-content:center;pointer-events:none;opacity:var(--tO,1);transition:opacity 600ms;',
       tWho:'display:flex;flex-direction:column;gap:2px;margin-top:14px;opacity:var(--tO,1);transition:opacity 600ms;',
-      tName:'color:var(--ink);font:600 1.0625rem/1.35 var(--font-text);',
-      tOrg:'color:var(--ink-soft);font:400 0.875rem/1.4 var(--font-text);',
+      tName:'color:var(--ink);font:700 '+(m?'max(16.5px,1.0625rem)':'1.125rem')+'/1.35 var(--font-display);letter-spacing:-0.01em;',
+      tOrg:'color:var(--green);font:500 max(14px,0.9375rem)/1.4 var(--font-text);',
       tBody:'position:relative;margin-top:20px;padding:22px 8px 18px;flex:1;display:flex;align-items:center;width:100%;opacity:var(--tO,1);transition:opacity 600ms;',
-      tQuote:'position:relative;z-index:1;margin:0;color:var(--ink);text-align:left;font:400 '+(m?'1rem':'1.0625rem')+'/1.65 var(--font-text);',
+      tQuote:'position:relative;z-index:1;margin:0;color:#0B2E47;text-align:left;font:500 '+(m?'max(15.5px,1.0625rem)':'1.125rem')+'/1.68 var(--font-text);letter-spacing:-0.003em;',
       tCtrlBtn:'width:48px;height:48px;border-radius:999px;border:1px solid #D7E2DE;background:var(--card);color:var(--ink);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 1px 2px rgba(0,57,95,0.06);transition:all 200ms;',
       tPrev:()=>this.tGo(-1), tNext:()=>this.tGo(1)
     };
