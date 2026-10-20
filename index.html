@@ -64,18 +64,6 @@ a{color:var(--ink)}
 @keyframes heroZoom{from{transform:scale(1.08)}to{transform:scale(1.0)}}
 @keyframes axisDraw{from{transform:scaleY(0)}to{transform:scaleY(1)}}
 @keyframes teamBioRise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
-@keyframes routeIn0{from{opacity:0;transform:translateX(-14px)}to{opacity:1;transform:none}}
-@keyframes routeIn1{from{opacity:0;transform:translateX(-14px)}to{opacity:1;transform:none}}
-@keyframes routeIn2{from{opacity:0;transform:translateX(-14px)}to{opacity:1;transform:none}}
-@keyframes routeIn3{from{opacity:0;transform:translateX(-14px)}to{opacity:1;transform:none}}
-@keyframes routeDraw0{from{transform:scaleY(0)}to{transform:scaleY(1)}}
-@keyframes routeDraw1{from{transform:scaleY(0)}to{transform:scaleY(1)}}
-@keyframes routeDraw2{from{transform:scaleY(0)}to{transform:scaleY(1)}}
-@keyframes routeDraw3{from{transform:scaleY(0)}to{transform:scaleY(1)}}
-@keyframes fadeSwap0{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-@keyframes fadeSwap1{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-@keyframes fadeSwap2{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-@keyframes fadeSwap3{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 input,textarea,select,button{font-family:var(--font-text)}
 select{appearance:none;-webkit-appearance:none}
 html{font-size:16px}
@@ -181,26 +169,6 @@ html{font-size:16px}
     </div>
   </section>
 
-  <section id="your-route" style="background:#EEF3F1;width:100vw;margin-left:calc(50% - 50vw);border-top:1px solid #D7E2DE;border-bottom:1px solid #D7E2DE;padding:clamp(72px,10vw,136px) 0"><div style="{{ wrap }}">
-    <div data-reveal style="text-align:center;margin-bottom:clamp(28px,3.5vw,44px)"><h2 style="{{ h2 }}margin:0 auto">Where are you starting from?</h2><p style="{{ body }}margin:16px auto 0;max-width:44ch">Pick the one that sounds like you, and see the route we'd take together.</p></div>
-    <div data-reveal role="tablist" aria-label="Where are you starting from?" style="{{ startTabsRow }}"><sc-for list="{{ startTabs }}" as="t" hint-placeholder-count="4"><button type="button" role="tab" aria-selected="{{ t.sel }}" onClick="{{ t.on }}" style="{{ t.style }}">{{ t.name }}</button></sc-for></div>
-    <div data-reveal role="tabpanel" style="{{ startCard }}">
-      <div style="{{ startText }}">
-        <span style="{{ startEyebrow }}">{{ startWho }}</span>
-        <h3 style="{{ startTitle }}">{{ startHead }}</h3>
-        <p style="{{ showcaseBody }}">{{ startBody }}</p>
-        <div style="margin-top:28px"><a href="https://calendly.com/hello-dhowpartners/30min" target="_blank" rel="noopener" style="{{ primaryBtn }}" style-hover="transform:translateY(-2px)">Book a call<span style="{{ btnCircle }}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square"><line x1="6" y1="18" x2="18" y2="6"></line><polyline points="8 6 18 6 18 16"></polyline></svg></span></a></div>
-        <p style="{{ startNote }}">Your written plan arrives within 48 hours of the call.</p>
-      </div>
-      <div style="{{ routePanel }}"><div style="position:relative">
-        <span aria-hidden="true" style="{{ routeLine }}"></span>
-        <ol style="{{ routeList }}">
-          <sc-for list="{{ startSteps }}" as="r" hint-placeholder-count="4"><li style="{{ r.style }}"><span style="{{ routeDot }}">{{ r.n }}</span><span style="padding-top:2px"><span style="{{ routeName }}">{{ r.t }}</span><span style="{{ routeSub }}">{{ r.d }}</span></span></li></sc-for>
-          <li style="{{ routeEnd }}"><span style="{{ routeEndDot }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><span style="{{ routeName }}">You're up and running.</span></li>
-        </ol>
-      </div></div>
-    </div>
-  </div></section>
 
   <section style="background:#00395F;width:100vw;margin-left:calc(50% - 50vw);padding:clamp(80px,11vw,150px) 0">
     <div style="{{ wrap }}">
@@ -213,33 +181,23 @@ html{font-size:16px}
     </div>
   </section>
 
-  <section id="impact" style="{{ wrap }}padding:clamp(72px,10vw,136px) 0 0">
-    <div data-reveal style="text-align:center;margin-bottom:clamp(32px,4vw,52px)"><h2 style="{{ h2 }}margin:0 auto">The work so far.</h2></div>
-    <div style="{{ impactGrid }}">
-      <div data-reveal style="{{ impactCard }}"><span data-count="10" data-suffix="+" style="{{ impactNum }}">10+</span><span style="{{ impactLbl }}">businesses set up</span></div>
-      <div data-reveal style="{{ impactCard }}"><span data-count="10" data-suffix="+" style="{{ impactNum }}">10+</span><span style="{{ impactLbl }}">partner firms in our network</span></div>
-      <div data-reveal style="{{ impactCard }}"><span data-count="7" style="{{ impactNum }}">7</span><span style="{{ impactLbl }}">service areas, one point of contact</span></div>
-      <div data-reveal style="{{ impactCard }}"><span data-count="48" data-suffix="h" style="{{ impactNum }}">48h</span><span style="{{ impactLbl }}">from your call to a written plan</span></div>
-    </div>
-  </section>
-
-  <section id="testimonials" style="{{ wrap }}padding:clamp(64px,8vw,112px) 0 0">
-    <div data-reveal style="text-align:center;margin-bottom:clamp(32px,4vw,52px)"><h2 style="{{ h2 }}margin:0 auto">In our clients' words.</h2></div>
+  <section id="testimonials" style="{{ wrap }}padding:clamp(72px,10vw,136px) 0 0">
+    <div data-reveal style="text-align:center;margin-bottom:clamp(36px,4.5vw,60px)"><h2 style="{{ h2 }}margin:0 auto">In our clients' words.</h2></div>
     <div style="{{ quoteGrid }}">
       <figure data-reveal style="{{ quoteCard }}" style-hover="transform:translateY(-6px);box-shadow:var(--shadow-lift)">
-        <div style="{{ quoteLogo }}"><img src="assets/clients/ardena.png" alt="Ardena" width="131" height="28" loading="lazy" style="height:28px;width:auto;display:block"><svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true" fill="#63B8A8"><path d="M9.5 6C6.5 7.2 4.5 9.9 4.5 13.4V18h6v-6H7.6c.2-1.9 1.3-3.4 3.1-4.2L9.5 6Zm9 0c-3 1.2-5 3.9-5 7.4V18h6v-6h-2.9c.2-1.9 1.3-3.4 3.1-4.2L18.5 6Z"></path></svg></div>
-        <blockquote style="{{ quoteText }}">“Dhow Partners took us through the whole procedure of setting up Ardena, connected us with the right lawyers and stayed with us until it was done. Today the company is running well.”</blockquote>
-        <figcaption style="{{ quoteBy }}"><span style="{{ quoteName }}">Deon Orina</span><span style="{{ quoteOrg }}">Ardena</span></figcaption>
+        <svg width="40" height="40" viewBox="0 0 24 24" aria-hidden="true" fill="#63B8A8"><path d="M9.5 6C6.5 7.2 4.5 9.9 4.5 13.4V18h6v-6H7.6c.2-1.9 1.3-3.4 3.1-4.2L9.5 6Zm9 0c-3 1.2-5 3.9-5 7.4V18h6v-6h-2.9c.2-1.9 1.3-3.4 3.1-4.2L18.5 6Z"></path></svg>
+        <blockquote style="{{ quoteText }}">Dhow Partners took us through the whole procedure of setting up Ardena, connected us with the right lawyers and stayed with us until it was done. Today the company is running well.</blockquote>
+        <figcaption style="{{ quoteBy }}"><span style="{{ quoteAvatar }}"><img src="assets/clients/ardena-mark.png" alt="Ardena logo" width="44" height="44" loading="lazy" style="width:44px;height:44px;display:block;object-fit:contain"></span><span style="{{ quoteWho }}"><span style="{{ quoteName }}">Deon Orina</span><span style="{{ quoteOrg }}">Ardena</span></span></figcaption>
       </figure>
       <figure data-reveal style="{{ quoteCard }}" style-hover="transform:translateY(-6px);box-shadow:var(--shadow-lift)">
-        <div style="{{ quoteLogo }}"><img src="assets/clients/gridflow.png" alt="GridFlow Solar" width="151" height="40" loading="lazy" style="height:40px;width:auto;display:block"><svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true" fill="#63B8A8"><path d="M9.5 6C6.5 7.2 4.5 9.9 4.5 13.4V18h6v-6H7.6c.2-1.9 1.3-3.4 3.1-4.2L9.5 6Zm9 0c-3 1.2-5 3.9-5 7.4V18h6v-6h-2.9c.2-1.9 1.3-3.4 3.1-4.2L18.5 6Z"></path></svg></div>
-        <blockquote style="{{ quoteText }}">“Dhow Partners helped us get set up and gave us clear, practical tech advice. They understood what we were building and made every step easier.”</blockquote>
-        <figcaption style="{{ quoteBy }}"><span style="{{ quoteName }}">Robinson Olaka</span><span style="{{ quoteOrg }}">GridFlow Solar</span></figcaption>
+        <svg width="40" height="40" viewBox="0 0 24 24" aria-hidden="true" fill="#63B8A8"><path d="M9.5 6C6.5 7.2 4.5 9.9 4.5 13.4V18h6v-6H7.6c.2-1.9 1.3-3.4 3.1-4.2L9.5 6Zm9 0c-3 1.2-5 3.9-5 7.4V18h6v-6h-2.9c.2-1.9 1.3-3.4 3.1-4.2L18.5 6Z"></path></svg>
+        <blockquote style="{{ quoteText }}">Dhow Partners helped us get set up and gave us clear, practical tech advice. They understood what we were building and made every step easier.</blockquote>
+        <figcaption style="{{ quoteBy }}"><span style="{{ quoteAvatar }}"><img src="assets/clients/gridflow-mark.png" alt="GridFlow Solar logo" width="44" height="44" loading="lazy" style="width:44px;height:44px;display:block;object-fit:contain"></span><span style="{{ quoteWho }}"><span style="{{ quoteName }}">Robinson Olaka</span><span style="{{ quoteOrg }}">GridFlow Solar</span></span></figcaption>
       </figure>
       <figure data-reveal style="{{ quoteCard }}" style-hover="transform:translateY(-6px);box-shadow:var(--shadow-lift)">
-        <div style="{{ quoteLogo }}"><span aria-hidden="true" style="{{ quoteInitials }}">MO</span><svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true" fill="#63B8A8"><path d="M9.5 6C6.5 7.2 4.5 9.9 4.5 13.4V18h6v-6H7.6c.2-1.9 1.3-3.4 3.1-4.2L9.5 6Zm9 0c-3 1.2-5 3.9-5 7.4V18h6v-6h-2.9c.2-1.9 1.3-3.4 3.1-4.2L18.5 6Z"></path></svg></div>
-        <blockquote style="{{ quoteText }}">“Dhow Partners guided me through the procedure and the legal requirements for starting my circular economy business, step by step and in plain language.”</blockquote>
-        <figcaption style="{{ quoteBy }}"><span style="{{ quoteName }}">Michael Oder</span><span style="{{ quoteOrg }}">Founder, Nairobi</span></figcaption>
+        <svg width="40" height="40" viewBox="0 0 24 24" aria-hidden="true" fill="#63B8A8"><path d="M9.5 6C6.5 7.2 4.5 9.9 4.5 13.4V18h6v-6H7.6c.2-1.9 1.3-3.4 3.1-4.2L9.5 6Zm9 0c-3 1.2-5 3.9-5 7.4V18h6v-6h-2.9c.2-1.9 1.3-3.4 3.1-4.2L18.5 6Z"></path></svg>
+        <blockquote style="{{ quoteText }}">Dhow Partners guided me through the procedure and the legal requirements for starting my circular economy business, step by step and in plain language.</blockquote>
+        <figcaption style="{{ quoteBy }}"><span style="{{ quoteAvatar }}"><img src="assets/clients/michael-odero.png" alt="" width="44" height="44" loading="lazy" style="width:44px;height:44px;display:block;object-fit:contain"></span><span style="{{ quoteWho }}"><span style="{{ quoteName }}">Michael Odero</span><span style="{{ quoteOrg }}">Founder, Nairobi</span></span></figcaption>
       </figure>
     </div>
   </section>
@@ -534,7 +492,7 @@ html{font-size:16px}
 <script type="text/x-dc" data-dc-script data-props="{&quot;heroStyle&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Cinematic&quot;,&quot;Photo&quot;],&quot;default&quot;:&quot;Cinematic&quot;,&quot;tsType&quot;:&quot;'Cinematic' | 'Photo'&quot;}}">
 class Component extends DCLogic {
   state = {
-    page:(this.pageFromLoc?this.pageFromLoc():'home'), menu:false, cookie:(this.readConsent?this.readConsent():null), cookieOpen:false, isMobile:false, isTablet:false, isXS:false, scrolled:false, discipline:0, startTab:0, openBio:null,
+    page:(this.pageFromLoc?this.pageFromLoc():'home'), menu:false, cookie:(this.readConsent?this.readConsent():null), cookieOpen:false, isMobile:false, isTablet:false, isXS:false, scrolled:false, discipline:0, openBio:null,
     reduceMotion: !!(typeof window!=='undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches),
     form:{fullname:'',email:'',company:'',country:'',objective:'',timeline:'',other:'',website:''},
     errors:{}, sent:'idle', sendError:''
@@ -856,47 +814,18 @@ class Component extends DCLogic {
     const showcaseTagsRow={display:'flex',flexWrap:'wrap',gap:'8px',marginTop:'8px'};
     const showcaseTitle="margin:0 0 12px;color:var(--ink);font:500 clamp(1.5rem,2.4vw,2rem)/1.15 var(--font-display);letter-spacing:-0.02em;";
     const showcaseBody="margin:0 0 4px;color:var(--ink-soft);font:400 1.0625rem/1.65 var(--font-text);max-width:52ch;";
-    const starts=[
-      {n:'Coming to Kenya',who:'Companies arriving in Kenya',h:'Set up properly, in the right order.',b:'Registration, licences, banking and your first hires, in the right order.',st:[['Company setup','Registration, KRA PIN and a registered office.'],['Permits and licences','Business permits, licences and work permits.'],['Bank account','Your company bank account, opened and running.'],['First hires','Recruitment, contracts and payroll.']]},
-      {n:'Investing',who:'Investors',h:'People on the ground, reporting to you.',b:'Checks on the ground, and people here who report back in writing.',st:[['Checks on the ground','The people, the paperwork and the place, verified.'],['Legal and tax review','Through licensed law firms and certified accountants.'],['Investor documents','Financial models and the documents you need.'],['Written reports','Clear updates from people here, in writing.']]},
-      {n:'Going regional',who:'Kenyan firms going regional',h:'Your next market, mapped out.',b:'A clear plan for the next market and the firms to deliver it.',st:[['Market plan','What it takes to enter, step by step.'],['Setup and licences','Registration and permits in the new market.'],['Hiring and payroll','Your team on the ground.'],['Launch','Positioning, brand and your launch plan.']]},
-      {n:'Starting a business',who:'Founders',h:'From idea to up and running.',b:'The procedure, the legal side and a launch plan your team can start on the next morning.',st:[['Registration and legal','Your company set up properly, with licensed lawyers.'],['Tax and accounting','KRA PIN, bookkeeping and tax filing from day one.'],['Website and systems','Your digital setup, ready to use.'],['Launch plan','Brand, digital and your first steps to market.']]}
-    ];
-    const sa=Math.max(0,Math.min(s.startTab||0,starts.length-1)); const sv=starts[sa];
-    const stTabBase='cursor:pointer;border-radius:999px;padding:'+(m?'11px 12px':'11px 20px')+';font:500 '+(m?'0.875rem':'0.9375rem')+'/1.25 var(--font-text);transition:all 200ms;display:inline-flex;align-items:center;justify-content:center;text-align:center;';
-    const startTabs=starts.map((e,i)=>({name:e.n, sel:(i===sa?'true':'false'), on:()=>{ this.setState({startTab:i}); this.track('start_tab',{tab:e.n}); }, style:stTabBase+(i===sa?'border:1px solid var(--ink);background:var(--ink);color:var(--card);box-shadow:var(--shadow-card);':'border:1px solid #D7E2DE;background:var(--card);color:var(--ink);box-shadow:0 1px 2px rgba(0,57,95,0.06);')}));
-    const startSteps=sv.st.map((x,i)=>({n:'0'+(i+1), t:x[0], d:x[1], style:'display:flex;align-items:flex-start;gap:18px;animation:routeIn'+sa+' 560ms cubic-bezier(0.22,1,0.36,1) both;animation-delay:'+(120+i*90)+'ms;'}));
-    const startVals={
-      startTabs:startTabs, startSteps:startSteps, startWho:sv.who, startHead:sv.h, startBody:sv.b,
-      startTabsRow:(m?'display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;':'display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:28px;'),
-      startCard:(m?'display:flex;flex-direction:column;':'display:grid;grid-template-columns:1fr 1fr;align-items:stretch;min-height:440px;')+'background:var(--card);border-radius:var(--r-card);overflow:hidden;box-shadow:var(--shadow-lift);',
-      startText:'padding:'+(m?'30px 24px':'clamp(36px,4.5vw,64px)')+';display:flex;flex-direction:column;align-items:flex-start;justify-content:center;animation:fadeSwap'+sa+' 480ms cubic-bezier(0.22,1,0.36,1) both;',
-      startEyebrow:'display:inline-block;margin-bottom:14px;color:var(--green);font:600 0.8125rem/1.3 var(--font-text);letter-spacing:0.08em;text-transform:uppercase;',
-      startTitle:"margin:0 0 14px;color:var(--ink);font:500 clamp(1.6rem,2.6vw,2.25rem)/1.12 var(--font-display);letter-spacing:-0.02em;max-width:18ch;",
-      startNote:'margin:16px 0 0;color:var(--ink-soft);font:400 0.9375rem/1.5 var(--font-text);',
-      routePanel:'position:relative;background:#00395F;padding:'+(m?'30px 24px 34px':'clamp(36px,4.5vw,64px)')+';display:flex;flex-direction:column;justify-content:center;',
-      routeLine:'position:absolute;left:19px;top:20px;bottom:20px;width:2px;background:rgba(99,184,168,0.6);transform-origin:top;animation:routeDraw'+sa+' 900ms cubic-bezier(0.22,1,0.36,1) both;',
-      routeList:'position:relative;margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:'+(m?'22px':'26px')+';',
-      routeDot:'flex:none;position:relative;width:40px;height:40px;border-radius:999px;background:var(--green);color:#FFFFFF;display:inline-flex;align-items:center;justify-content:center;font:700 0.9375rem/1 var(--font-display);box-shadow:0 0 0 6px rgba(0,132,109,0.25);',
-      routeEndDot:'flex:none;position:relative;width:40px;height:40px;border-radius:999px;background:#FFFFFF;color:var(--green);display:inline-flex;align-items:center;justify-content:center;box-shadow:0 0 0 6px rgba(255,255,255,0.14);',
-      routeEnd:'display:flex;align-items:center;gap:18px;animation:routeIn'+sa+' 560ms cubic-bezier(0.22,1,0.36,1) both;animation-delay:'+(120+sv.st.length*90)+'ms;',
-      routeName:'display:block;color:#FFFFFF;font:500 1.0625rem/1.35 var(--font-text);',
-      routeSub:'display:block;margin-top:3px;color:#C9D8E2;font:400 0.9375rem/1.55 var(--font-text);',
-      impactGrid:'display:grid;align-items:stretch;gap:'+(m?'12px':'20px')+';grid-template-columns:'+(m?'1fr 1fr':'repeat(4,1fr)')+';',
-      impactCard:'height:100%;background:var(--card);border-radius:22px;padding:'+(m?'24px 14px':'34px 24px')+';display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;box-shadow:inset 0 -3px 0 #DCE6EC,var(--shadow-card);',
-      impactNum:'color:#00846D;font:700 '+(m?'2.4rem':'clamp(2.6rem,4.2vw,3.6rem)')+'/1 var(--font-display);letter-spacing:-0.03em;font-variant-numeric:tabular-nums;',
-      impactLbl:'color:var(--ink);font:400 '+(m?'0.9375rem':'1.0625rem')+'/1.45 var(--font-text);max-width:22ch;',
+    const quoteVals={
       quoteGrid:(m?'display:flex;flex-direction:column;gap:16px;':'display:grid;grid-template-columns:repeat(3,1fr);align-items:stretch;gap:24px;'),
-      quoteCard:'margin:0;height:100%;background:var(--card);border-radius:var(--r-card);padding:'+(m?'26px 22px':'36px 32px')+';box-shadow:var(--shadow-card);display:flex;flex-direction:column;gap:20px;transition:transform 320ms cubic-bezier(0.22,1,0.36,1),box-shadow 320ms cubic-bezier(0.22,1,0.36,1);',
-      quoteLogo:'height:44px;display:flex;align-items:center;justify-content:space-between;gap:16px;',
-      quoteText:'margin:0;flex:1;color:var(--ink);font:400 '+(m?'1.0625rem':'1.125rem')+'/1.65 var(--font-text);',
-      quoteBy:'display:flex;flex-direction:column;gap:2px;padding-top:18px;border-top:1px solid var(--rule);',
+      quoteCard:'margin:0;height:100%;background:var(--card);border-radius:var(--r-card);padding:'+(m?'28px 24px':'38px 34px')+';box-shadow:var(--shadow-card);display:flex;flex-direction:column;gap:22px;transition:transform 320ms cubic-bezier(0.22,1,0.36,1),box-shadow 320ms cubic-bezier(0.22,1,0.36,1);',
+      quoteText:'margin:0;flex:1;color:var(--ink);font:400 '+(m?'1.0625rem':'1.125rem')+'/1.7 var(--font-text);',
+      quoteBy:'display:flex;align-items:center;gap:14px;padding-top:22px;border-top:1px solid var(--rule);',
+      quoteAvatar:'flex:none;width:60px;height:60px;border-radius:999px;background:#F2F5F7;border:1px solid var(--rule);display:inline-flex;align-items:center;justify-content:center;overflow:hidden;',
+      quoteWho:'display:flex;flex-direction:column;gap:2px;min-width:0;',
       quoteName:'color:var(--ink);font:600 1rem/1.4 var(--font-text);',
-      quoteOrg:'color:var(--ink-soft);font:400 0.9375rem/1.4 var(--font-text);',
-      quoteInitials:'width:44px;height:44px;border-radius:999px;background:var(--ground);color:var(--ink);display:inline-flex;align-items:center;justify-content:center;font:700 1rem/1 var(--font-display);letter-spacing:0.02em;'
+      quoteOrg:'color:var(--ink-soft);font:400 0.9375rem/1.4 var(--font-text);'
     };
     return {
-      ...startVals,
+      ...quoteVals,
       isMobile:m, isDesktop:!m, menu:s.menu, scrolled:s.scrolled,
       engineTabs:engineTabs, engineTabsRow:engineTabsRow, showcaseCard:showcaseCard, showcaseText:showcaseText, showcaseIconChip:showcaseIconChip, showcaseImg:showcaseImg, showcaseTitle:showcaseTitle, showcaseBody:showcaseBody, showcaseTagsRow:showcaseTagsRow, tagChip:tagChip,
       activeIcon:this.icon(eng.ic,false,30), activeTitle:eng.t, activeBody:eng.b, activeTags:eng.tags, activeImgEl:activeImgEl,
