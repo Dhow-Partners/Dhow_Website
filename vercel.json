@@ -1,8 +1,21 @@
 {
   "cleanUrls": true,
   "redirects": [
-    { "source": "/whatsapp", "destination": "https://wa.me/message/HJAYDBSILGGWM1", "permanent": false },
-    { "source": "/wa", "destination": "https://wa.me/message/HJAYDBSILGGWM1", "permanent": false }
+    {
+      "source": "/whatsapp",
+      "destination": "https://wa.me/message/HJAYDBSILGGWM1",
+      "permanent": false
+    },
+    {
+      "source": "/wa",
+      "destination": "https://wa.me/message/HJAYDBSILGGWM1",
+      "permanent": false
+    },
+    {
+      "source": "/brand",
+      "destination": "https://brandfetch.com/dhowpartners.com",
+      "permanent": false
+    }
   ],
   "rewrites": [
     {
