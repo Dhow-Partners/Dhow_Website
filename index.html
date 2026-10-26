@@ -848,7 +848,7 @@ class Component extends DCLogic {
       {name:'Njoroge Nduati',org:'CEO, Brandables International',note:true,q:'Dhow Partners supported Brandables International with technology and legal advice.',logo:['assets/clients/brandables.png','Brandables International',66,60,false]}
     ];
     const tQuoteS='position:relative;z-index:1;margin:0;color:#0B2E47;text-align:left;font:500 '+(m?'max(15.5px,1.0625rem)':'1.125rem')+'/1.68 var(--font-text);letter-spacing:-0.003em;';
-    const tNote='position:relative;z-index:1;margin:0 auto;color:#0B2E47;text-align:center;font:500 '+(m?'max(15.5px,1.0625rem)':'1.125rem')+'/1.68 var(--font-text);letter-spacing:-0.003em;max-width:30ch;';
+    const tNote=tQuoteS;
     const tImg=(L,st)=>React.createElement('img',{src:L[0],alt:L[1],width:L[2],height:L[3],draggable:false,style:st});
     const tLogoEl=(L)=> L[4] ? React.createElement('span',{style:{width:'60px',height:'60px',borderRadius:'999px',background:'#F2F5F7',border:'1px solid var(--rule)',display:'inline-flex',alignItems:'center',justifyContent:'center'}},tImg(L,{width:L[2]+'px',height:L[3]+'px',display:'block',objectFit:'contain'})) : tImg(L,{height:L[3]+'px',width:'auto',display:'block'});
     const tN=tData.length; this._tN=tN; const ti=((s.tIdx||0)%tN+tN)%tN; const tG=m?'8px':'28px'; const tS=m?'0.9':'0.88';
