@@ -823,7 +823,7 @@ class Component extends DCLogic {
     const mapFoot='display:flex;align-items:center;gap:12px;padding:18px 22px;';
     const mapDot='flex:none;width:10px;height:10px;border-radius:999px;background:var(--green);box-shadow:0 0 0 4px rgba(0,132,109,0.18);';
     const teamGrid = m?{display:'grid',gridTemplateColumns:'minmax(0,420px)',justifyContent:'center',gap:'18px',marginTop:'36px'}:{display:'flex',flexWrap:'wrap',justifyContent:'center',gap:'28px',marginTop:'40px'};
-    const teamCard=(m?'':'flex:0 1 340px;min-width:0;')+'position:relative;border-radius:var(--r-card);overflow:hidden;box-shadow:var(--shadow-card);transition:transform 320ms cubic-bezier(0.22,1,0.36,1),box-shadow 320ms cubic-bezier(0.22,1,0.36,1);';
+    const teamCard=(m?'':'flex:0 1 21.25rem;min-width:0;')+'position:relative;border-radius:var(--r-card);overflow:hidden;box-shadow:var(--shadow-card);transition:transform 320ms cubic-bezier(0.22,1,0.36,1),box-shadow 320ms cubic-bezier(0.22,1,0.36,1);';
     const teamPic='position:relative;aspect-ratio:'+(m?'4/5':'4/5')+';overflow:hidden;';
     const teamImg='position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;';
     const teamOverlay='position:absolute;inset:0;background:linear-gradient(to top,rgba(0,20,34,0.82) 0%,rgba(0,20,34,0.14) 48%,transparent 72%);';
@@ -831,11 +831,11 @@ class Component extends DCLogic {
     const teamCaption='position:absolute;left:0;right:0;bottom:0;padding:22px;display:flex;flex-direction:column;gap:2px;z-index:1;';
     const teamName='color:var(--card);font:500 '+(m?'17px':'18px')+' var(--font-text);';
     const teamRole='color:#DCE6EC;font:400 '+(m?'13px':'13px')+' var(--font-text);';
-    const teamBio = 'position:absolute;inset:0;z-index:3;background:linear-gradient(to top,rgba(0,28,46,0.97),rgba(0,28,46,0.9));display:flex;flex-direction:column;justify-content:flex-end;padding:'+(m?'22px':'26px')+';transform:translateY(var(--bioY,101%));opacity:var(--bioO,0);transition:transform 440ms cubic-bezier(0.22,1,0.36,1),opacity 300ms;';
+    const teamBio = 'position:absolute;inset:0;z-index:3;background:linear-gradient(to top,rgba(0,28,46,0.97),rgba(0,28,46,0.94));display:flex;flex-direction:column;justify-content:safe flex-end;overflow-y:auto;overscroll-behavior:contain;padding:'+(m?'22px':'24px')+';transform:translateY(var(--bioY,101%));opacity:var(--bioO,0);transition:transform 440ms cubic-bezier(0.22,1,0.36,1),opacity 300ms;';
     const teamTapHint = 'display:'+(m?'inline-flex':'none')+';align-items:center;gap:6px;margin-top:8px;color:var(--card);font:500 12px var(--font-text);letter-spacing:0.04em;opacity:0.85;';
     const teamBioName='color:var(--card);font:500 18px var(--font-text);';
     const teamBioRole='color:#DCE6EC;font:400 13px var(--font-text);margin-bottom:14px;';
-    const teamBioText='margin:0 0 18px;color:rgba(255,255,255,0.86);font:400 0.9375rem/1.6 var(--font-text);';
+    const teamBioText='margin:0 0 16px;color:rgba(255,255,255,0.88);font:400 '+(m?'0.9375rem/1.6':'0.875rem/1.5')+' var(--font-text);';
     const teamBioLink='display:inline-flex;align-items:center;gap:8px;color:var(--ink);background:var(--card);border-radius:999px;padding:10px 18px;font:500 13px var(--font-text);text-decoration:none;align-self:flex-start;transition:all 180ms;';
     const tagChip='display:inline-block;padding:6px 12px;border-radius:999px;background:var(--ground);color:var(--ink);font:500 13px var(--font-text);';
     const showcaseTagsRow={display:'flex',flexWrap:'wrap',gap:'8px',marginTop:'8px'};
