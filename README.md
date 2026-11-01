@@ -34,6 +34,7 @@ All pages live inside `index.html` and have their own clean URL.
 | `/services` | What we do |
 | `/about` | Why we started Dhow Partners |
 | `/contact` | Contact and message form |
+| `/apply` | Membership and application form (separate file: `apply.html`) |
 | `/work-with-us` | Careers |
 | `/privacy` | Privacy policy (Kenya Data Protection Act, 2019) |
 | `/terms` | Terms and agreement |
@@ -46,6 +47,7 @@ All pages live inside `index.html` and have their own clean URL.
 ```
 Dhow_Website/
 ├── index.html              The whole website (all pages)
+├── apply.html              Membership page and application form (/apply)
 ├── support.js              Runtime that renders the site. Do not edit.
 ├── 404.html                "Page not found" page
 ├── robots.txt              Rules for search engines and AI crawlers
