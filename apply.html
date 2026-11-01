@@ -381,7 +381,7 @@ details[open] .faq-plus{transform:rotate(45deg);background:#00846D}
         <p style="margin: 20px auto 0; color: var(--ink-soft); font: 400 clamp(1.0625rem, 1.4vw, 1.1875rem)/1.6 var(--font-text); max-width: 52ch; text-wrap: pretty">Can't find your answer? Write to <a href="mailto:hello@dhowpartners.com" style="color: var(--ink); text-decoration: underline; text-decoration-color: var(--green); text-underline-offset: 4px">hello@dhowpartners.com</a> or WhatsApp +254 716 688 988.</p>
       </div>
       <div style="margin: clamp(36px, 4.5vw, 52px) auto 0; max-width: 880px; display: flex; flex-direction: column; gap: 14px">
-        <sc-for list="{{ faqs }}" as="q" hint-placeholder-count="12">
+        <sc-for list="{{ faqs }}" as="q" hint-placeholder-count="13">
           <details style="border-radius: 20px; background: linear-gradient(180deg, #FFFFFF 0%, #F9FBFC 100%); border: 1px solid #FFFFFF; box-shadow: inset 0 1px 0 #FFFFFF, 0 4px 0 -1px #D3DEE5, 0 14px 24px -14px rgba(0,57,95,0.25)">
             <summary style="display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: clamp(18px, 2.4vw, 22px) clamp(18px, 2.6vw, 28px); color: var(--ink); font: 500 clamp(1.0625rem, 1.4vw, 1.1875rem)/1.4 var(--font-text)">{{ q.q }}<span class="faq-plus" aria-hidden="true" style="flex: none; width: 36px; height: 36px; border-radius: 50%; background: var(--ink); color: #FFFFFF; display: inline-flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></span></summary>
             <p style="margin: 0; padding: 0 clamp(18px, 2.6vw, 28px) 24px; color: var(--ink-soft); font: 400 1.0625rem/1.65 var(--font-text); max-width: 64ch">{{ q.a }}</p>
@@ -651,6 +651,7 @@ class Component extends DCLogic {
         { q: 'When will I hear back?', a: 'By Friday 15 January 2027. Every applicant gets a decision by email. If you are accepted, your acceptance email is followed by a welcome call.' },
         { q: 'How long does membership last?', a: 'One year. The programme officially starts on Monday 18 January 2027 and runs for a full year.' },
         { q: 'When do I pay?', a: 'Only after you are accepted. Nothing is charged when you apply. Once we accept you, we send you a payment link.' },
+        { q: 'Can I cancel, and can I get a refund?', a: 'Membership fees are not refundable. You can cancel at any time by writing to hello@dhowpartners.com, and your membership stays active until the end of the period you have already paid for.' },
         { q: 'Can I pay yearly?', a: 'Yes. Yearly plans include two months free: KSh 10,000 a year for Starter and KSh 50,000 a year for Growth.' },
         { q: 'Will my price go up later?', a: 'Not if you join in round one. You keep your round one rate for as long as you stay a member.' },
         { q: 'Can you represent my business at events?', a: 'Yes. Every member can ask us to represent their business at major events, at a discounted member rate. Growth members get priority.' },
