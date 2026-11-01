@@ -565,7 +565,7 @@ class Component extends DCLogic {
     set('meta[name="twitter:title"]','name','twitter:title',M[0]); set('meta[name="twitter:description"]','name','twitter:description',M[1]);
     let rb=document.head.querySelector('meta[name="robots"]'); if(rb) rb.setAttribute('content',p==='notfound'?'noindex, follow':'index, follow, max-image-preview:large');
   }catch(e){} }
-  gaId(){ return 'G-XXXXXXXXXX'; }
+  gaId(){ return 'G-RQ47K2QC7H'; }
   readConsent(){ try{ const v=localStorage.getItem('dp-cookie-consent'); return (v==='accepted'||v==='declined')?v:null; }catch(e){ return null; } }
   memberPhase(){ const t=Date.now(); if(t<Date.UTC(2026,10,8,21,0,0)) return 'soon'; if(t<Date.UTC(2027,0,13,21,0,0)) return 'open'; return 'closed'; }
   promoActive(){ return Date.now()<Date.UTC(2027,0,11,21,0,0); }

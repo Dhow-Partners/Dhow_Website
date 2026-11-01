@@ -461,7 +461,8 @@ class Component extends DCLogic {
   readConsent() { try { const v = localStorage.getItem('dp-cookie-consent'); return (v === 'accepted' || v === 'declined') ? v : null; } catch (e) { return null; } }
   setConsent(v) { try { localStorage.setItem('dp-cookie-consent', v); } catch (e) {} this.setState({ cookie: v, cookieOpen: false }); if (v === 'accepted') this.loadGA(); else if (window.gtag) window.gtag('consent', 'update', { analytics_storage: 'denied' }); }
   // Keep the same Measurement ID as gaId() in index.html.
-  gaId() { return 'G-XXXXXXXXXX'; }
+  gaId() { return 'G-RQ47K2QC7H'; }
+  trackEv(n, p) { try { if (this.state.cookie === 'accepted' && this._ga === 'on' && window.gtag) window.gtag('event', n, p || {}); } catch (e) {} }
   loadGA() {
     if (this._ga) return;
     const id = this.gaId();
@@ -585,7 +586,7 @@ class Component extends DCLogic {
         if (!SHEET_URL || !this._live) { this.setState({ rSent: true, preview: true }); return; }
         this.setState({ rSending: true, rErr: '' });
         fetch(SHEET_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(data) })
-          .then(() => this.setState({ rSent: true, rSending: false }))
+          .then(() => { this.setState({ rSent: true, rSending: false }); this.trackEv('membership_reminder', {}); })
           .catch(() => this.setState({ rSending: false, rErr: 'That did not send. Please check your connection and try again.' }));
       },
       setPlan: (e) => this.setState({ plan: e.target.value }),
@@ -600,7 +601,7 @@ class Component extends DCLogic {
         if (!SHEET_URL || !this._live) { this.setState({ sent: true, preview: true }); return; }
         this.setState({ sending: true, err: '' });
         fetch(SHEET_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(data) })
-          .then(() => this.setState({ sent: true, sending: false }))
+          .then(() => { this.setState({ sent: true, sending: false }); this.trackEv('membership_application', { plan: data.plan || '' }); })
           .catch(() => this.setState({ sending: false, err: 'Your application did not send. Please check your connection and try again, or email hello@dhowpartners.com.' }));
       },
       sending: !!s.sending,
