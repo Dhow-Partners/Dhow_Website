@@ -425,7 +425,7 @@ details[open] .faq-plus{transform:rotate(45deg);background:#00846D}
         <div style="display: flex; flex-wrap: wrap; gap: 14px 28px"><a href="https://brandfetch.com/dhowpartners.com" target="_blank" rel="noopener" class="fsmall" style="color: #DCE6EC; font: 400 14px var(--font-text); text-decoration: none">Brand kit</a><a href="/privacy" class="fsmall" style="color: #DCE6EC; font: 400 14px var(--font-text); text-decoration: none">Privacy</a><a href="/terms" class="fsmall" style="color: #DCE6EC; font: 400 14px var(--font-text); text-decoration: none">Terms</a><button type="button" class="fsmall" onClick="{{ openCookies }}" style="background: none; border: 0; padding: 0; cursor: pointer; color: #DCE6EC; font: 400 14px var(--font-text)">Cookie settings</button></div>
       </div>
     </div>
-    <div aria-hidden="true" style="display: flex; justify-content: center; align-items: baseline; gap: 0.22em; white-space: nowrap; color: rgba(255,255,255,0.07); font: 700 clamp(3.4rem, 13vw, 13rem)/0.8 var(--font-display); letter-spacing: -0.045em; user-select: none; pointer-events: none; margin-top: 24px; margin-bottom: -0.16em; overflow: hidden"><span style="display: inline-flex; align-items: baseline">Dh<span style="display: inline-block; width: 0.5em; height: 0.5em; border-radius: 50%; background: rgba(99,184,168,0.35); margin: 0 0.035em; transform: translateY(0.012em)"></span>w</span><span>Partners</span></div>
+    <div aria-hidden="true" style="display:flex;justify-content:center;margin-top:24px;pointer-events:none;user-select:none"><img src="/assets/wordmark-watermark.webp" alt="" width="1400" height="142" loading="lazy" decoding="async" style="display:block;width:min(92%,1240px);height:auto;opacity:0.07"></div>
   </footer>
 
   <sc-if value="{{ showCookie }}" hint-placeholder-val="{{ false }}">
@@ -540,8 +540,8 @@ class Component extends DCLogic {
     const base = 'grid-area:1/1;justify-self:center;align-self:stretch;position:relative;margin:0;box-sizing:border-box;width:' + (m ? 'min(80vw,340px)' : 'clamp(300px,29vw,24rem)') + ';background:linear-gradient(180deg,#FFFFFF 0%,#F7FAFB 100%);border:1px solid #FFFFFF;border-radius:26px;padding:' + (m ? '30px 24px 32px' : '40px 34px 42px') + ';display:flex;flex-direction:column;align-items:center;text-align:center;cursor:pointer;user-select:none;-webkit-user-select:none;transition:transform 800ms cubic-bezier(0.22,1,0.36,1),box-shadow 800ms,opacity 600ms;';
     const pos = [
       'transform:translateX(0) scale(1);z-index:3;--tO:1;box-shadow:inset 0 1px 0 #FFFFFF,0 7px 0 -1px #D3DEE5,0 9px 2px -1px rgba(0,57,95,0.08),0 22px 34px -14px rgba(0,57,95,0.22),0 46px 70px -34px rgba(0,57,95,0.30);',
-      'transform:translateX(calc(100% + ' + G + ')) scale(' + S + ');z-index:2;--tO:0.72;box-shadow:0 5px 0 -1px #DCE5EB,0 14px 30px -18px rgba(0,57,95,0.22);',
-      'transform:translateX(calc(-100% - ' + G + ')) scale(' + S + ');z-index:1;--tO:0.72;box-shadow:0 5px 0 -1px #DCE5EB,0 14px 30px -18px rgba(0,57,95,0.22);',
+      'transform:translateX(calc(100% + ' + G + ')) scale(' + S + ');z-index:2;--tO:1;box-shadow:0 5px 0 -1px #DCE5EB,0 14px 30px -18px rgba(0,57,95,0.22);',
+      'transform:translateX(calc(-100% - ' + G + ')) scale(' + S + ');z-index:1;--tO:1;box-shadow:0 5px 0 -1px #DCE5EB,0 14px 30px -18px rgba(0,57,95,0.22);',
       'transform:translateX(0) scale(0.78);z-index:0;opacity:0;pointer-events:none;--tO:0;box-shadow:none;'
     ];
     const tileBase = 'width:66px;height:66px;border-radius:20px;display:inline-flex;align-items:center;justify-content:center;flex:none;opacity:var(--tO,1);transition:opacity 600ms;';
