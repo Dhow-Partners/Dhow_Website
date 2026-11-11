@@ -25,7 +25,7 @@
   "rewrites": [
     {
       "source": "/((?!assets/|apply$|apply\\.html$|support\\.js|robots\\.txt|sitemap\\.xml|llms\\.txt|manifest\\.webmanifest|404\\.html).*)",
-      "destination": "/index.html"
+      "destination": "/"
     }
   ]
 }
