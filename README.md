@@ -46,9 +46,18 @@ All pages live inside `index.html` and have their own clean URL.
 
 ```
 Dhow_Website/
-├── index.html              The whole website (all pages)
-├── apply.html              Membership page and application form (/apply)
-├── support.js              Runtime that renders the site. Do not edit.
+├── src/site.dc.html        SOURCE of the main site (all pages). Edit this, then build.
+├── src/apply.dc.html       SOURCE of the Membership page. Edit this, then build.
+├── tools/build.js          Builds the public pages below from src/
+├── index.html              Built: home page          (do not edit by hand)
+├── services.html           Built: /services
+├── about.html              Built: /about
+├── work-with-us.html       Built: /work-with-us
+├── contact.html            Built: /contact
+├── privacy.html            Built: /privacy
+├── terms.html              Built: /terms
+├── apply.html              Built: /apply (Membership page and application form)
+├── support.js              Runtime that renders the site (small local change, see the top of the file)
 ├── 404.html                "Page not found" page
 ├── robots.txt              Rules for search engines and AI crawlers
 ├── sitemap.xml             List of pages for Google and Bing
@@ -165,13 +174,21 @@ git push -u origin main
 
 ## 8. Making changes later
 
-- **Text, prices, contact details:** open `index.html`, search for the words you want to change, edit, save, then commit and push. The live site updates in about a minute.
+- **Text, prices, contact details:** open `src/site.dc.html` (or `src/apply.dc.html` for the Membership page), search for the words you want to change, edit and save. Then build the pages, commit and push. The live site updates in about a minute.
 
   ```bash
+  NODE_PATH=$(npm root -g) node tools/build.js   # needs Node and Playwright
   git add .
   git commit -m "Update contact page"
   git push
   ```
+
+  The build gives every page its own title, description and link preview, and a copy of the page
+  content that search engines and AI assistants can read without running JavaScript. Visitors see
+  the same page as before. If you skip the build, the live pages keep the old text.
+
+- **Membership page after 13 January 2027:** run the build once after applications close, so the
+  copy that search engines read also says applications are closed.
 
 - **Photos:** replace a file in `assets/photos/` with a new one **using the same file name**.
 - **New page or section:** keep the same fonts (Cabinet Grotesk for headings, Switzer for text) and colours below.

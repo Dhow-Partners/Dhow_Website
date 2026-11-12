@@ -1,4 +1,6 @@
 // GENERATED from dc-runtime/src/*.ts — do not edit. Rebuild with `cd dc-runtime && bun run build`.
+// Local change (Dhow Partners): reads the template from <script type="text/x-dc-template"> when present,
+// and removes the pre-rendered copy (#dc-prerender) before mounting. See tools/build.js.
 "use strict";
 (() => {
   var __defProp = Object.defineProperty;
@@ -28,8 +30,9 @@
     const { props, preview } = parseDataProps(
       scriptEl?.getAttribute("data-props") ?? null
     );
+    const tplEl = dc.querySelector('script[type="text/x-dc-template"]');
     return {
-      template: dc.innerHTML,
+      template: tplEl ? tplEl.textContent : dc.innerHTML,
       js: scriptEl ? scriptEl.textContent || "" : "",
       props,
       preview
@@ -40,7 +43,9 @@
     if (!openMatch) return null;
     const close = src.lastIndexOf("</x-dc>");
     if (close === -1 || close < openMatch.index) return null;
-    const template = src.slice(openMatch.index + openMatch[0].length, close);
+    let template = src.slice(openMatch.index + openMatch[0].length, close);
+    const tplMatch = /^\s*<script type="text\/x-dc-template">([\s\S]*)<\/script>\s*$/.exec(template);
+    if (tplMatch) template = tplMatch[1];
     const doc = new DOMParser().parseFromString(src, "text/html");
     const scriptEl = doc.querySelector("script[data-dc-script]");
     const { props, preview } = parseDataProps(
@@ -163,6 +168,8 @@
       });
     }
     const dc = doc.querySelector("x-dc");
+    const prerendered = doc.getElementById("dc-prerender");
+    if (prerendered) prerendered.remove();
     const hostEl = doc.createElement("div");
     hostEl.id = "dc-root";
     dc.replaceWith(hostEl);

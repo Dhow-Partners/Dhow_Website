@@ -27,5 +27,16 @@
       "source": "/((?!assets/|apply$|apply\\.html$|support\\.js|robots\\.txt|sitemap\\.xml|llms\\.txt|manifest\\.webmanifest|404\\.html).*)",
       "destination": "/"
     }
+  ],
+  "headers": [
+    {
+      "source": "/(src|tools)/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    }
   ]
 }
