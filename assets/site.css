@@ -1,0 +1,42 @@
+/* Built by tools/build.js from src/site.dc.html. Do not edit. */
+:root{
+  --ground:#EBEFF2;--ground-2:#F5F7F9;--card:#FFFFFF;--ink:#00395F;--ink-soft:#4A6478;
+  --rule:#DDE4EA;--rule-strong:#7C93A3;--green:#00846D;--green-soft:#63B8A8;--error:#A3221F;
+  --shadow-card:0 1px 2px rgba(0,57,95,0.04),0 8px 20px -6px rgba(0,57,95,0.08),0 28px 56px -20px rgba(0,57,95,0.16);
+  --shadow-lift:0 2px 4px rgba(0,57,95,0.05),0 16px 34px -8px rgba(0,57,95,0.10),0 48px 84px -24px rgba(0,57,95,0.20);
+  --shadow-nav:0 1px 2px rgba(0,57,95,0.05),0 10px 30px -8px rgba(0,57,95,0.14);
+  --r-card:24px;--r-sm:20px;--r-input:12px;
+  --font-display:'Cabinet Grotesk',system-ui,sans-serif;--font-text:'Switzer',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ground);overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:var(--ink)}
+::selection{background:var(--green-soft);color:var(--ink)}
+@keyframes routeFlow{from{stroke-dashoffset:0}to{stroke-dashoffset:-560}}
+@keyframes focalPulse{0%{transform:scale(1);opacity:0.7}100%{transform:scale(5.5);opacity:0}}
+@keyframes orbDrift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(-4%,3%) scale(1.07)}100%{transform:translate(0,0) scale(1)}}
+@keyframes scrollDot{0%{transform:translateY(0);opacity:0}20%{opacity:1}80%{opacity:1}100%{transform:translateY(16px);opacity:0}}
+@keyframes heroZoom{from{transform:scale(1.08)}to{transform:scale(1.0)}}
+@keyframes axisDraw{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes promoFade{from{opacity:0}to{opacity:1}}
+@keyframes promoRise{from{opacity:0;transform:translateY(24px) scale(0.97)}to{opacity:1;transform:none}}
+@keyframes teamBioRise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+#tStage:focus-visible{outline:2px solid var(--green);outline-offset:-2px}
+details>summary{list-style:none}
+details>summary::-webkit-details-marker{display:none}
+details[open] [data-faq-plus]{transform:rotate(45deg)}
+summary:focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:var(--r-sm)}
+input,textarea,select,button{font-family:var(--font-text)}
+select{appearance:none;-webkit-appearance:none}
+html{font-size:16px}
+@media (max-width:600px){html{font-size:15.5px}}
+@media (max-width:400px){html{font-size:14px}}
+@media (max-width:340px){html{font-size:12.5px}}
+@media (min-width:1800px){html{font-size:18px}}
+@media (min-width:2400px){html{font-size:20px}}
+@media (prefers-reduced-motion: reduce){*{animation-duration:0.001ms !important;animation-iteration-count:1 !important;transition-duration:0.001ms !important}}
+
+/* Pre-rendered copy: hidden while the live page is drawn. */
+#dc-prerender{display:none}

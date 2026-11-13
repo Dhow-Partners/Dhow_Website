@@ -1,6 +1,7 @@
 // GENERATED from dc-runtime/src/*.ts — do not edit. Rebuild with `cd dc-runtime && bun run build`.
 // Local change (Dhow Partners): reads the template from <script type="text/x-dc-template"> when present,
-// and removes the pre-rendered copy (#dc-prerender) before mounting. See tools/build.js.
+// removes the pre-rendered copy (#dc-prerender) before mounting, can load the template from
+// <x-dc data-src>, and shows the pre-rendered copy if the page cannot start. See tools/build.js.
 "use strict";
 (() => {
   var __defProp = Object.defineProperty;
@@ -152,15 +153,15 @@
       return s;
     }
   }
-  function boot(runtime, doc = document) {
-    const parsed = parseDcDocument(doc);
+  function boot(runtime, doc = document, preParsed = null) {
+    const parsed = preParsed || parseDcDocument(doc);
     if (!parsed) return null;
     const React = getReact();
     const rootName = rootNameForDocument(doc, location);
     runtime.markFetched(rootName);
     runtime.setRootName(rootName);
     runtime.adoptParsed(rootName, parsed);
-    if (!window.__resources) {
+    if (!preParsed && !window.__resources) {
       fetch(location.href).then((res) => res.ok ? res.text() : "").then((t) => {
         const raw = t ? parseDcText(t) : null;
         if (raw?.template) runtime.updateHtml(rootName, raw.template);
@@ -1752,6 +1753,18 @@
       /** Editor bridge — the *original* (decoded) template source. */
       __dcTemplateSource: (name) => runtime.templateSource(name),
       __dcBoot: () => {
+        if (externalSource) {
+          externalSource.then((t) => {
+            const parsed = parseDcText(t);
+            if (!parsed) throw new Error("no <x-dc> block in the page template");
+            rootName = boot(runtime, document, parsed) ?? rootName;
+            notifyHost();
+          }).catch((err) => {
+            console.error("[dc] failed to load the page template:", err);
+            showPrerendered();
+          });
+          return;
+        }
         rootName = boot(runtime, document) ?? rootName;
         notifyHost();
       },
@@ -1767,9 +1780,34 @@
     if (document.readyState !== "loading") api.__dcBoot();
     else document.addEventListener("DOMContentLoaded", () => api.__dcBoot());
   }
+  // Dhow Partners: the page template can live in its own file (<x-dc data-src="...">),
+  // fetched while React loads. If the page cannot start, show the pre-rendered copy instead.
+  function showPrerendered() {
+    const pre = document.getElementById("dc-prerender");
+    if (!pre || document.getElementById("dc-root")) return;
+    const css = pre.getAttribute("data-css");
+    if (css && !document.querySelector('link[data-prerender-css]')) {
+      const l = document.createElement("link");
+      l.rel = "stylesheet";
+      l.href = css;
+      l.setAttribute("data-prerender-css", "");
+      document.head.appendChild(l);
+    }
+    pre.style.display = "block";
+  }
+  const externalEl = document.querySelector("x-dc[data-src]");
+  const externalSource = externalEl ? fetch(externalEl.getAttribute("data-src")).then((r) => {
+    if (!r.ok) throw new Error("template HTTP " + r.status);
+    return r.text();
+  }) : null;
+  if (externalSource) externalSource.catch(() => {});
+  setTimeout(() => {
+    if (!document.getElementById("dc-root")) showPrerendered();
+  }, 1e4);
   hideRawTemplate();
   loadReactUmd().then(init).catch((err) => {
     console.error("[dc] failed to load React or boot:", err);
+    showPrerendered();
     throw err;
   });
 })();

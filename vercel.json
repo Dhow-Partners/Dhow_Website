@@ -1,5 +1,6 @@
 {
   "cleanUrls": true,
+  "trailingSlash": false,
   "redirects": [
     {
       "source": "/whatsapp",
@@ -22,12 +23,6 @@
       "permanent": false
     }
   ],
-  "rewrites": [
-    {
-      "source": "/((?!assets/|apply$|apply\\.html$|support\\.js|robots\\.txt|sitemap\\.xml|llms\\.txt|manifest\\.webmanifest|404\\.html).*)",
-      "destination": "/"
-    }
-  ],
   "headers": [
     {
       "source": "/(src|tools)/(.*)",
@@ -35,6 +30,46 @@
         {
           "key": "X-Robots-Tag",
           "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/dc/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/support.min.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/:file(.*\\.css)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/:file(.*\\.(?:webp|png|jpg|jpeg|svg|ico))",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, stale-while-revalidate=86400"
         }
       ]
     }

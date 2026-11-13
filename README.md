@@ -48,7 +48,7 @@ All pages live inside `index.html` and have their own clean URL.
 Dhow_Website/
 ├── src/site.dc.html        SOURCE of the main site (all pages). Edit this, then build.
 ├── src/apply.dc.html       SOURCE of the Membership page. Edit this, then build.
-├── tools/build.js          Builds the public pages below from src/
+├── tools/build.js          Builds the public pages and shared files below from src/
 ├── index.html              Built: home page          (do not edit by hand)
 ├── services.html           Built: /services
 ├── about.html              Built: /about
@@ -57,7 +57,10 @@ Dhow_Website/
 ├── privacy.html            Built: /privacy
 ├── terms.html              Built: /terms
 ├── apply.html              Built: /apply (Membership page and application form)
-├── support.js              Runtime that renders the site (small local change, see the top of the file)
+├── dc/site.txt, dc/apply.txt   Built: page templates and logic, loaded by the runtime
+├── assets/site.css, assets/apply.css, assets/prerender.css   Built: page styles
+├── support.min.js          Built: minified runtime used by the pages
+├── support.js              Runtime source (small local changes, see the top of the file); minified by the build
 ├── 404.html                "Page not found" page
 ├── robots.txt              Rules for search engines and AI crawlers
 ├── sitemap.xml             List of pages for Google and Bing
@@ -177,7 +180,7 @@ git push -u origin main
 - **Text, prices, contact details:** open `src/site.dc.html` (or `src/apply.dc.html` for the Membership page), search for the words you want to change, edit and save. Then build the pages, commit and push. The live site updates in about a minute.
 
   ```bash
-  NODE_PATH=$(npm root -g) node tools/build.js   # needs Node and Playwright
+  NODE_PATH=$(npm root -g) node tools/build.js   # needs Node and Playwright (esbuild optional)
   git add .
   git commit -m "Update contact page"
   git push
