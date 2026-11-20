@@ -18,7 +18,7 @@ A fast, static website. There is **no build step, no framework install and no da
 | Entry point | `index.html` |
 | Hosting | Vercel (recommended), Netlify or GitHub Pages |
 | Domain | `dhowpartners.com` |
-| Booking | https://calendly.com/hello-dhowpartners/30min |
+| Booking | https://calendly.com/hello-dhowpartners/dhow-partners-30-minute-call |
 | Contact form | Emails `hello@dhowpartners.com` via FormSubmit |
 | Analytics | Google Analytics 4, loads only after cookie consent |
 
@@ -148,7 +148,7 @@ git push -u origin main
 - [ ] **Google Analytics ID.** In `index.html`, search for `G-XXXXXXXXXX` and replace it (every time it appears) with your real Measurement ID from Google Analytics → Admin → Data streams.
 - [ ] **Contact form.** Send one test message from the live site. FormSubmit emails `hello@dhowpartners.com` an activation link. Click it once. Every message after that is delivered.
 - [ ] **Mailbox.** Make sure `hello@dhowpartners.com` exists and receives mail.
-- [ ] **Booking.** Click every *Book a call* button. Each opens https://calendly.com/hello-dhowpartners/30min.
+- [ ] **Booking.** Click every *Book a call* button. Each opens https://calendly.com/hello-dhowpartners/dhow-partners-30-minute-call.
 - [ ] **Phone.** Test on a real phone: menu, buttons, form, all pages.
 - [ ] **Legal.** Have a Kenyan advocate review `/privacy` and `/terms`, and check whether you must register with the Office of the Data Protection Commissioner (ODPC).
 - [ ] **404.** Visit `dhowpartners.com/anything` and confirm the "Page not found" page shows.
