@@ -478,7 +478,13 @@ class Component extends DCLogic {
     if (!/^G-[A-Z0-9]{6,}$/.test(id) || id === 'G-XXXXXXXXXX') { this._ga = 'pending'; return; }
     window.dataLayer = window.dataLayer || []; window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
     window.gtag('consent', 'default', { analytics_storage: 'granted', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' }); window.gtag('js', new Date()); window.gtag('config', id, { anonymize_ip: true });
-    const sc = document.createElement('script'); sc.async = true; sc.src = 'https://www.googletagmanager.com/gtag/js?id=' + id; document.head.appendChild(sc); this._ga = 'on';
+    const sc = document.createElement('script'); sc.async = true; sc.src = 'https://www.googletagmanager.com/gtag/js?id=' + id; document.head.appendChild(sc); this._ga = 'on'; this.watchErrors();
+  }
+  watchErrors() {
+    if (this._we) return; this._we = 1;
+    const send = (d) => { try { if (this._ga === 'on' && window.gtag) window.gtag('event', 'exception', { description: String(d || 'error').slice(0, 150), fatal: false, page_path: location.pathname }); } catch (e) {} };
+    window.addEventListener('error', (e) => { send((e && e.message || 'error') + ' @ ' + String(e && e.filename || '').split('/').pop() + ':' + (e && e.lineno || 0)); });
+    window.addEventListener('unhandledrejection', (e) => { const r = e && e.reason; send('promise: ' + (r && (r.message || r) || 'rejected')); });
   }
   initStage() {
     const st = document.getElementById('pStage');
@@ -592,6 +598,9 @@ class Component extends DCLogic {
         if (this.state.rSending) return;
         const data = { type: 'reminder' };
         try { new FormData(e.target).forEach((v, k) => { data[k] = v; }); } catch (err) {}
+        if (data.hp) { this.setState({ rSent: true }); return; }
+        delete data.hp;
+        if (data.email) data.email = String(data.email).trim().toLowerCase();
         if (!SHEET_URL || !this._live) { this.setState({ rSent: true, preview: true }); return; }
         this.setState({ rSending: true, rErr: '' });
         fetch(SHEET_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(data) })
@@ -607,6 +616,9 @@ class Component extends DCLogic {
         if (this.state.sending) return;
         const data = {};
         try { new FormData(e.target).forEach((v, k) => { data[k] = data[k] ? data[k] + ', ' + v : v; }); } catch (err) {}
+        if (data.hp) { this.setState({ sent: true }); return; }
+        delete data.hp;
+        if (data.email) data.email = String(data.email).trim().toLowerCase();
         if (!SHEET_URL || !this._live) { this.setState({ sent: true, preview: true }); return; }
         this.setState({ sending: true, err: '' });
         fetch(SHEET_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(data) })

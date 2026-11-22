@@ -93,6 +93,7 @@
 .p1g24asd{width: 56px; height: 56px; display: block; margin-bottom: 20px;}
 .p1g46v4o{color: var(--ink); text-decoration-line: underline; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: var(--green); text-underline-offset: 3px;}
 .p1g9in23{display: inline-block; width: 0.5em; height: 0.5em; border-radius: 50%; background: rgb(99, 184, 168); margin: 0px 0.035em; transform: translateY(0.012em); flex: 0 0 auto;}
+.p1gcicg1{margin: 16px 0px 0px; color: var(--ink-soft); font: 400 13px/1.55 var(--font-text);}
 .p1gr330u{position: absolute; left: 50%; bottom: -11px; transform: translateX(-50%); width: 5px; height: 5px; border-radius: 999px; background: var(--green);}
 .p1h9b4vk{box-sizing: border-box; margin: clamp(36px, 4.5vw, 52px) auto 0px; max-width: 720px; background: rgb(255, 255, 255); border: 1px solid rgb(255, 255, 255); border-radius: 22px; box-shadow: rgb(255, 255, 255) 0px 1px 0px inset, rgb(211, 222, 229) 0px 5px 0px -1px, rgba(0, 57, 95, 0.28) 0px 18px 30px -18px; padding: clamp(22px, 3vw, 32px);}
 .p1hmdvm9{width: min(1340px, 100% - 80px); margin: 0px auto; padding: clamp(60px, 8vw, 112px) 0px 0px;}
@@ -188,6 +189,7 @@
 .p406nd4{color: var(--ink); text-decoration: underline; text-underline-offset: 3px;}
 .p4an66n{display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 20px;}
 .p4cnk40{margin-bottom: clamp(36px, 4.5vw, 60px); text-align: center;}
+.p4dhvfy{color: var(--ink); text-decoration: underline rgb(0, 132, 109); text-underline-offset: 3px;}
 .p4fq3ri{width: 40px; height: 40px; border-radius: 10px; background: var(--ground); color: var(--ink); display: inline-flex; align-items: center; justify-content: center; transition: 180ms;}
 .p4g37e7{--dpdot: #00846D; display: inline-flex; align-items: baseline; gap: 0.27em; color: var(--ink); font: 700 25px/1 var(--font-display); letter-spacing: -0.025em; white-space: nowrap; transition: color 320ms;}
 .p4oa8xg{margin-top: 8px; font: 600 clamp(16px, 1.4vw, 18px)/1.2 var(--font-text); color: rgb(227, 244, 239);}
